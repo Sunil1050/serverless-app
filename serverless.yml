@@ -24,6 +24,11 @@ functions:
           path: notes
           method: post
           cors: true  # Add CORS configuration here
+          private: true
+          request:
+            parameters:
+              headers:
+                x-api-key: true  # This specifies that x-api-key header is required
 
   # Update Operation - AWS Lambda function and configuration for updating an existing note.
   updateNote:
@@ -41,6 +46,11 @@ functions:
           path: notes/{id}
           method: put
           cors: true  # Add CORS configuration here
+          private: true
+          request:
+            parameters:
+              headers:
+                x-api-key: true  # This specifies that x-api-key header is required
 
   # Read Operation - AWS Lambda function and configuration for retrieving all notes.
   getAllNotes:
@@ -58,6 +68,11 @@ functions:
           path: notes
           method: get
           cors: true  # Add CORS configuration here
+          private: true
+          request:
+            parameters:
+              headers:
+                x-api-key: true  # This specifies that x-api-key header is required
 
   # Delete Operation - AWS Lambda function and configuration for deleting a note.
   deleteNote:
@@ -75,6 +90,11 @@ functions:
           path: notes/{id}
           method: delete
           cors: true  # Add CORS configuration here
+          private: true
+          request:
+            parameters:
+              headers:
+                x-api-key: true  # This specifies that x-api-key header is required
 
 plugins:
   - serverless-iam-roles-per-function
