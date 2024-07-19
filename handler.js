@@ -13,6 +13,10 @@ const NOTES_TABLE_NAME = process.env.NOTES_TABLE_NAME;
 const send = (statusCode, message) => {
     return {
         statusCode: statusCode,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true,
+        },
         body: JSON.stringify(message),
     };
 }

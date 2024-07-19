@@ -23,6 +23,7 @@ functions:
       - http:
           path: notes
           method: post
+          cors: true  # Add CORS configuration here
 
   # Update Operation - AWS Lambda function and configuration for updating an existing note.
   updateNote:
@@ -39,6 +40,7 @@ functions:
       - http:
           path: notes/{id}
           method: put
+          cors: true  # Add CORS configuration here
 
   # Read Operation - AWS Lambda function and configuration for retrieving all notes.
   getAllNotes:
@@ -55,6 +57,7 @@ functions:
       - http:
           path: notes
           method: get
+          cors: true  # Add CORS configuration here
 
   # Delete Operation - AWS Lambda function and configuration for deleting a note.
   deleteNote:
@@ -71,6 +74,7 @@ functions:
       - http:
           path: notes/{id}
           method: delete
+          cors: true  # Add CORS configuration here
 
 plugins:
   - serverless-iam-roles-per-function
